@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
+import ListGroup from '../../components/list/ListGroup';
+
 class HomePage extends Component {
     
     render() { 
         return (  
-            <h1>Home</h1>
+            <ListGroup />
         );
     }
 }

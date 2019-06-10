@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import { lazy } from 'react';
 
 const HomePage = lazy(() => import('./pages/home-page/HomePage'));
 const homeRoutes = [
