@@ -1,0 +1,41 @@
+.menu {
+    z-index: 3;
+}
+
+.menu-open,
+.menu-close,
+.menu-overlay {
+    transition: all .5s ease-in-out;
+}
+
+.menu-open {
+    right: 0;
+}
+
+.menu-close {
+    right: -999px;
+}
+
+.menu-list {
+    max-width: 300px;
+    width: 100%;
+    position: fixed;
+    text-align: right;
+    bottom: 0;
+    top: 56px;
+    z-index: 3;
+}
+
+.menu-item {
+    background-color: #2c3033;
+}
+
+.menu-overlay {
+    background: rgba(0,0,0,.8);
+    position: fixed;
+    z-index: 1;
+    top: 56px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

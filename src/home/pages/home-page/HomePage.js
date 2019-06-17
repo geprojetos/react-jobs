@@ -19,7 +19,7 @@ class HomePage extends Component {
 
         return (
             <section className="container">
-                <Jumbotron title="Vagas" />
+                <Jumbotron title="Vagas" bg="bg-dark" color="text-white" />
                 <JobsList jobs={ jobs } />
             </section>
         );
