@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
+
 import ListItem from './ListItem';
 
 class ListGroup extends Component {
-    
+
     render() { 
-        const array = ['cat 1', 'cat 2', 'cat 3'];
+        const { categories } = this.props;
 
         return (  
             <ul className="list-group">
                 {
-                    array.map((item, indice) => {
+                   categories.map((cat, indice) => {
                         return (
                             <ListItem 
                                 key={ indice } 
-                                item={ item }
+                                cat={ cat.name }
                             />
                         )
                     })

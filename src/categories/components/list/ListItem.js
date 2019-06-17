@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 class ListItem extends Component {
     
     render() { 
-        const { item } = this.props;
+        const { cat } = this.props;
 
         return (  
             <li className="list-group-item">
-                { item }
+                { cat }
 
                 <button type="button" className="close text-danger" aria-label="Close">
                     <i className="fas fa-trash-alt"></i>
