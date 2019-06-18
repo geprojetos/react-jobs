@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class InputGroup extends Component {
     
     render() { 
-        const { label, id, icon, type, idMsgErro, placeholder, msgValidation, value, onchange } = this.props;
+        const { label, id, name, icon, type, idMsgErro, placeholder, msgValidation, value, onchange, classError } = this.props;
 
         return (  
             <div className="form-group">
@@ -19,15 +19,16 @@ class InputGroup extends Component {
                     <input 
                         type={ type } 
                         className="form-control" 
+                        name={ name }
                         id={ id } 
                         aria-describedby={ idMsgErro } 
                         placeholder={ placeholder }
                         value={ value }
-                        onChange={ onchange } 
+                        onChange={ onchange }
                     />
                 </div>
 
-                <small id={ idMsgErro } className="form-text text-danger">
+                <small id={ idMsgErro } className={ `form-text text-danger ${ classError }` }>
                     { msgValidation }
                 </small>
             </div>
