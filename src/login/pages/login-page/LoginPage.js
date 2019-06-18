@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import LoginForm from '../../components/form/loginForm';
+
+import CenteredForm from '../../components/form/CenteredForm';
 
 class LoginPage extends Component {
     
     render() { 
         return (  
-            <LoginForm />
+            <CenteredForm />
         );
     }
 }
