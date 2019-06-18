@@ -33,6 +33,9 @@ class Menu extends Component {
                             <li className="nav-item menu-item active mb-1">
                                 <Link className="nav-link p-3" to="/categories">Categorias</Link>
                             </li>
+                            <li className="nav-item menu-item active mb-1">
+                                <Link className="nav-link p-3" to="/login">Login</Link>
+                            </li>
                         </ul>
                     </div>
                 </nav>
