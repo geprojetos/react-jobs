@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import './css/menu.css';
+import appRoutes from '../../../app.routes';
 
 class Menu extends Component {
 
@@ -15,6 +16,7 @@ class Menu extends Component {
     };
     
     render() { 
+        
         return (  
             <header className="bg-dark">
                 <nav className="navbar-dark navbar-light mb-2">
@@ -27,15 +29,17 @@ class Menu extends Component {
     
                     <div className="navbar-collapse" onClick={ this.menuToogle }>
                         <ul className={ `navbar-nav menu-list bg-dark ${ this.state.visible ? 'menu-open' : 'menu-close' }` }>
-                            <li className="nav-item menu-item active mb-1">
-                                <Link className="nav-link p-3" to="/">Home</Link>
-                            </li>
-                            <li className="nav-item menu-item active mb-1">
-                                <Link className="nav-link p-3" to="/categories">Categorias</Link>
-                            </li>
-                            <li className="nav-item menu-item active mb-1">
-                                <Link className="nav-link p-3" to="/login">Login</Link>
-                            </li>
+                            {
+                                appRoutes.map((item, indice) => {
+                                    return(
+                                        <li key={ indice } className="nav-item menu-item active mb-1">
+                                            <Link className="nav-link p-3" to={ item.path }>
+                                                { item.name }
+                                            </Link>
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                 </nav>

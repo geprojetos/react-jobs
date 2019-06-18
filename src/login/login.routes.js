@@ -5,7 +5,8 @@ const loginRoutes = [
     {
         exact: false,
         path: '/login',
-        component: LoginPage
+        component: LoginPage,
+        name: 'Login'
     }
 ];
 

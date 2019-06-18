@@ -5,7 +5,8 @@ const categoriesRoutes = [
     {
         exact: false,
         path: '/categories',
-        component: CategoriesListPage
+        component: CategoriesListPage,
+        name: 'Categorias'
     }
 ];
 
