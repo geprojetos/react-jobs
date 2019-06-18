@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './css/centerd-form.css';
-import LoginForm from './loginForm';
+import LoginForm from './LoginForm';
 
 class CenteredForm extends Component {
     
