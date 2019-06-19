@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 import Jumbotron from '../../../shared/components/jumbotron/Jumbotron';
 import InputGroup from '../../../shared/components/input/InputGroup';
+import ApiService from '../../../shared/services/api/ApiService';
+
+const apiService = new ApiService();
 
 class LoginForm extends Component {
     
@@ -9,16 +12,28 @@ class LoginForm extends Component {
         login: '',
         password: '',
         loginRequired: true,
-        passwordRequired: true
+        passwordRequired: true,
+        errorValidation: ''
     };
 
-    handleSubmit = e => {
+    handleSubmit = async e => {
 
         e.preventDefault();
 
         const isValid = this.validateForm(this.state);
-        console.log(isValid);
+        const { props } = this.props;
         
+        if(!isValid) return;
+        
+        const response = await apiService.post('/sigin', this.state);
+        
+        if(response.statusText) {
+            
+            this.setState({ errorValidation: 'Login ou senha inválidos' });
+            return;
+        };
+
+        props.history.push('/');
     };
 
     changeInput = e => {
@@ -48,12 +63,18 @@ class LoginForm extends Component {
     };
 
     render() { 
-        const { login, password, loginRequired, passwordRequired } = this.state;
+        const { login, password, loginRequired, passwordRequired, errorValidation } = this.state;
 
         return (
             <section>
                 <Jumbotron title="Jobs Login" bg="bg-dark" color="text-white" />
                 
+                {
+                    errorValidation
+                    ? <div className="alert alert-danger text-center">{ errorValidation }</div>
+                    : ''
+                }
+
                 <form onSubmit={ this.handleSubmit.bind(this) }>
                     <fieldset>
                         <InputGroup 

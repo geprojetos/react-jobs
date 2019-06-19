@@ -6,7 +6,7 @@ class LoginPage extends Component {
     
     render() { 
         return (  
-            <CenteredForm />
+            <CenteredForm props={ this.props } />
         );
     }
 }
